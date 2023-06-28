@@ -53,7 +53,9 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto grid grid-cols-12 gap-1 border-solid border-4 p-4">
+  <div
+    class="container content-center mx-auto grid grid-cols-4 md:grid-cols-12 gap-1 border-solid border-4 p-4"
+  >
     <Champion
       @my-champions="addChoseedChamp"
       @refresh-composition="refreshCompositionsMatch"
@@ -64,9 +66,12 @@ export default {
       :index="index"
     />
   </div>
-  <div class="container mx-auto mt-10 border-solid border-4 p-4">
+  <div class="container mx-auto mt-10 border-solid border-4 p-4 md:grid-cols-12 gap-1">
     <h1 class="text-center font-bold mb-4">SUA COMPOSIÇÃO ATUAL</h1>
-    <div class="container mx-auto grid grid-cols-12" v-if="choosedChampions.length > 0">
+    <div
+      class="container content-center mx-auto grid grid-cols-4 md:grid-cols-12 gap-1 border-solid border-4 p-4"
+      v-if="choosedChampions.length > 0"
+    >
       <Champion
         @refresh-composition="refreshCompositionsMatch"
         @click="removeFromChoosedChampions(index)"

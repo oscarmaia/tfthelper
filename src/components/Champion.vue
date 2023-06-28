@@ -13,9 +13,9 @@ export default {
 <template>
   <div
     @click="$emit('my-champions', { name, img, cost, index }), $emit('refresh-composition')"
-    class="flex flex-col items-center w-3/5"
-  >
-    <span class="text-xs text-ellipsis overflow-hidden">{{ name }}</span>
+    class="mx-auto grid justify-center items-center w-5/5 sm:w-4/5"
+  > 
+    <span class="hidden sm:flex text-xs text-ellipsis overflow-hidden">{{ name }}</span>
     <div class="">
       <div :class="`h-full w-full border-solid border-4 cost${cost}`">
         <img :src="img" class="" />
